@@ -392,16 +392,16 @@ int main(int argc, char **argv) {
 	if (Reboot_Arg == "recovery")
 		TWFunc::tw_reboot(rb_recovery);
 	else if (Reboot_Arg == "poweroff")
-		TWFunc::tw_reboot(rb_poweroff);
 		TWFunc::check_and_run_script("/sbin/boot_a");
 		TWFunc::check_and_run_script("/sbin/boot_b");
+		TWFunc::tw_reboot(rb_poweroff);
 	else if (Reboot_Arg == "bootloader")
 		TWFunc::tw_reboot(rb_bootloader);
 	else if (Reboot_Arg == "download")
 		TWFunc::tw_reboot(rb_download);
 	else
-		TWFunc::tw_reboot(rb_system);
 		TWFunc::check_and_run_script("/sbin/boot_a");
-		TWFunc::check_and_run_script("/sbin/boot_b";
+		TWFunc::check_and_run_script("/sbin/boot_b");
+		TWFunc::tw_reboot(rb_system);
 	return 0;
 }
